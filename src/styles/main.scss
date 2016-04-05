@@ -1,0 +1,140 @@
+@import 'reset';
+@import 'mixVar';
+
+
+
+/***** GENERAL *****/
+
+body {
+  font-family: $sans-serif-font;
+  color: $font-color;
+  text-align: center;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+
+/***** HEADER *****/
+
+header {
+  height: $header-height;
+  ul {
+    height: 100%;
+    margin-left: 15px;
+    overflow: hidden;
+    li {
+      height: 100%;
+      float: left;
+      a {
+        color: $font-color;
+        line-height: 2.9;
+        height: 100%;
+        padding: 0 15px;
+        display: block;
+        text-decoration: none;
+        &:hover {
+          background-color: #F7F7F7;
+        }
+      }
+    }
+  }
+}
+
+
+/***** MAIN *****/
+
+.main-container {
+  position: absolute;
+  top: $header-height;
+  bottom: 0;
+  width: 100%;
+}
+
+.page-wrap {
+  position: relative;
+  height: 100%;
+}
+
+.page-container {
+  font-size: 18px;
+  color: #fff;
+  padding-top: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  transform: translateX(0);
+  h1 {
+    margin-bottom: 40px;
+  }
+}
+
+.home-container {
+  background-color: #B9BFCA;
+}
+
+.about-container {
+  background-color: #C7BABA;
+}
+
+
+/***** MAIN PAGE TRANSITIONS *****/
+
+.main-page-enter {
+  &.home-container {
+    @include transform(translateX(-100%));
+  }
+  &.about-container {
+    @include transform(translateX(100%));
+  }
+}
+
+.main-page-enter.main-page-enter-active {
+  @include transform(translateX(0));
+  @include transitionTransform(1s cubic-bezier(0.230, 1.000, 0.195, 0.995));
+}
+
+.main-page-leave {
+  @include transform(translateX(0));
+}
+
+.main-page-leave.main-page-leave-active {
+  &.home-container {
+    @include transform(translateX(-100%));
+  }
+  &.about-container {
+    @include transform(translateX(100%));
+  }
+  @include transitionTransform(1s cubic-bezier(0.230, 1.000, 0.195, 0.995));
+}
+
+
+/***** TEXT FIELD *****/
+
+.text-field-comp {
+  h2 {
+    font-weight: 300;
+  }
+  input[type="text"] {
+    font-size: 14px;
+    color: #797979;
+    margin: 10px auto;
+    padding: 5px 10px;
+    width: 200px;
+    appearance: none;
+    box-shadow: none;
+    border: none;
+  }
+}
+
+
+
+
+
+
+
+

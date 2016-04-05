@@ -1,0 +1,48 @@
+/* ===== VARIABLES ============= */
+
+$sans-serif-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-color: #585858;
+$header-height: 50px;
+
+
+/* ===== MIXINS ================ */
+
+@mixin transition($vars...) {
+  -webkit-transition: $vars;
+     -moz-transition: $vars;
+      -ms-transition: $vars;
+       -o-transition: $vars;
+          transition: $vars;
+}
+
+@mixin transform($vars...) {
+  -webkit-transform: $vars;
+     -moz-transform: $vars;
+      -ms-transform: $vars;
+       -o-transform: $vars;
+          transform: $vars;
+}
+
+@mixin transitionTransform($vars...) {
+  -webkit-transition: -webkit-transform $vars;
+     -moz-transition: -moz-transform $vars;
+      -ms-transition: -ms-transform $vars;
+       -o-transition: -o-transform $vars;
+          transition: transform $vars;
+}
+
+@mixin transitionDelay($vars...) {
+  -webkit-transition-delay: $vars;
+     -moz-transition-delay: $vars;
+      -ms-transition-delay: $vars;
+       -o-transition-delay: $vars;
+          transition-delay: $vars;
+}
+
+
+/* ===== MEDIA QUERIES =========== */
+
+$break-mobile: 767px;
+$break-tablet: 1024px;
+
+
