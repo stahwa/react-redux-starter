@@ -1,9 +1,9 @@
-import React from 'react'
-import { Route, IndexRoute } from 'react-router'
-import App from './containers/App'
-import Main from './containers/MainContainer'
-import Home from './containers/HomeContainer'
-import About from './containers/AboutContainer'
+import React from 'react';
+import { Route, IndexRoute } from 'react-router';
+import App from './containers/App';
+import Main from './containers/Main';
+import Home from './containers/pages/Home';
+import About from './containers/pages/About';
 
 
 const routes = (

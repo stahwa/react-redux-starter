@@ -1,0 +1,28 @@
+@import '../../styles/mixVar';
+
+
+/* ===== HEADER ============= */
+
+header {
+  height: $header-height;
+  ul {
+    height: 100%;
+    margin-left: 15px;
+    overflow: hidden;
+    li {
+      height: 100%;
+      float: left;
+      a {
+        color: $font-color;
+        line-height: 2.9;
+        height: 100%;
+        padding: 0 15px;
+        display: block;
+        text-decoration: none;
+        &:hover {
+          background-color: #F7F7F7;
+        }
+      }
+    }
+  }
+}

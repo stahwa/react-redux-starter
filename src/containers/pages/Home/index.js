@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import Home from '../components/Home'
-import { connect } from 'react-redux'
-import { addToString } from '../actions/'
-import TextField from '../components/TextField'
- 
+import React, { Component } from 'react';
+import styles from './styles';
+import { connect } from 'react-redux';
+import { addToString } from './actions';
+import TextField from 'components/TextField';
 
-class HomeContainer extends Component {
+
+class HomePage extends Component {
 
   constructor(props) {
     super(props)
@@ -19,7 +19,9 @@ class HomeContainer extends Component {
   render() {
     return (
       <div className="home-container page-container">
-        <Home />
+        <div className="home-comp">
+          <h1>A React Redux Starter</h1>
+        </div>
         <TextField onUpdate={this.handleOnUpdate} text={this.props.text} />
       </div>
     )
@@ -28,7 +30,7 @@ class HomeContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    text: state.textField.text
+    text: state.rootReducer.textField.text
   }
 }
 
@@ -36,4 +38,4 @@ const mapStateToProps = (state) => {
 export default connect(
   mapStateToProps,
   { addToString }
-)(HomeContainer)
+)(HomePage)

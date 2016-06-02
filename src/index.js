@@ -1,18 +1,19 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { createStore, combineReducers } from 'redux'
-import * as reducer from './reducers'
-import { Router, hashHistory, useRouterHistory } from 'react-router'
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
-import createHashHistory from 'react-router/node_modules/history/lib/createHashHistory'
-import routes from './routes'
-import './styles/main.scss'
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, combineReducers } from 'redux';
+import rootReducer from 'containers/App/reducer';
+
+import { Router, hashHistory, useRouterHistory } from 'react-router';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
+import createHashHistory from 'react-router/node_modules/history/lib/createHashHistory';
+import routes from './routes';
+
 
 
 const store = createStore(
   combineReducers({
-    ...reducer,
+    rootReducer,
     routing: routerReducer
   })
 )

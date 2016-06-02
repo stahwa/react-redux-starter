@@ -15,6 +15,10 @@ module.exports = {
     path: __dirname + '/dist',
     filename: 'bundle.js'
   },
+  resolve: {
+    root: path.resolve('./src'),
+    extensions: ['', '.js', '.scss']
+  },
   module: {
     loaders: [
       {
@@ -37,7 +41,7 @@ module.exports = {
   },
   plugins: [
     HTMLWebpackPluginConfig,
-    new ExtractTextPlugin("styles/main.css"),
+    new ExtractTextPlugin("main.css"),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')

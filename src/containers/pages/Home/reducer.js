@@ -1,7 +1,7 @@
 
 function textField(state = {text:''}, action) {
   switch (action.type) {
-    case 'Add_TO_STRING':
+    case 'UPDATE_TEXT':
       return Object.assign({}, {
         text: action.text
       })
@@ -11,6 +11,6 @@ function textField(state = {text:''}, action) {
 }
 
 
-export { textField }
+export default textField
 
 

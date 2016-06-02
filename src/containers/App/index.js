@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import HeaderContainer from './HeaderContainer'
+import React, { Component } from 'react';
+import styles from './styles';
+import Header from 'components/Header';
 
 
 class App extends Component {
@@ -7,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="site-wrap">
-        <HeaderContainer />
+        <Header />
         {this.props.children}
       </div>
     )

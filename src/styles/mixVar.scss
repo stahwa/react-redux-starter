@@ -1,11 +1,12 @@
-/* ===== VARIABLES ============= */
+
+/* ----- VARIABLES ----- */
 
 $sans-serif-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-color: #585858;
 $header-height: 50px;
 
 
-/* ===== MIXINS ================ */
+/* ----- MIXINS ----- */
 
 @mixin transition($vars...) {
   -webkit-transition: $vars;
@@ -40,7 +41,7 @@ $header-height: 50px;
 }
 
 
-/* ===== MEDIA QUERIES =========== */
+/* ----- MEDIA QUERIES ----- */
 
 $break-mobile: 767px;
 $break-tablet: 1024px;
