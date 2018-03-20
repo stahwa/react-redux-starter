@@ -6,27 +6,28 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   filename: 'index.html',
   inject: 'body'
 });
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+// var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
 module.exports = {
-  entry: './src/index.js',
-  output: { 
+  entry: './src/index.js',
+  mode: 'development',
+  output: {
     path: __dirname + '/dist',
     filename: 'bundle.js'
   },
-  resolve: {
-    root: path.resolve('./src'),
-    extensions: ['', '.js', '.scss']
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract(
-          "style-loader",
-          "css-loader!sass")
-      },
+  // resolve: {
+  //   root: path.resolve('./src'),
+  //   extensions: ['.js', '.scss']
+  // },
+  module: {
+    rules: [
+      // {
+      //   test: /\.scss$/,
+      //   loader: ExtractTextPlugin.extract(
+      //     "style-loader",
+      //     "css-loader!sass")
+      // },
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -41,7 +42,7 @@ module.exports = {
   },
   plugins: [
     HTMLWebpackPluginConfig,
-    new ExtractTextPlugin("main.css"),
+    // new ExtractTextPlugin("main.css"),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
