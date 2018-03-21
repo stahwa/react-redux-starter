@@ -7,14 +7,22 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body'
 });
 // var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 module.exports = {
   entry: './src/index.js',
   mode: 'development',
   output: {
-    path: __dirname + '/dist',
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
+  },
+  resolve: {
+    alias: {
+      components: path.resolve( __dirname, 'src/components' ),
+      containers: path.resolve( __dirname, 'src/containers' )
+    },
+    extensions: ['.js', '.scss']
   },
   // resolve: {
   //   root: path.resolve('./src'),
@@ -22,27 +30,33 @@ module.exports = {
   // },
   module: {
     rules: [
-      // {
-      //   test: /\.scss$/,
-      //   loader: ExtractTextPlugin.extract(
-      //     "style-loader",
-      //     "css-loader!sass")
-      // },
+      {
+        test: /\.scss$/,
+        use: [
+          // MiniCssExtractPlugin.loader,
+          "style-loader",
+          "css-loader",
+          "sass-loader"
+        ]
+      },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react'],
-          plugins: ['transform-object-rest-spread']
-        }
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015', 'react'],
+            plugins: ['transform-object-rest-spread']
+          }
+        },
+        exclude: /node_modules/
+        
       }
 
     ]
   },
   plugins: [
     HTMLWebpackPluginConfig,
-    // new ExtractTextPlugin("main.css"),
+    new MiniCssExtractPlugin("main.css"),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')

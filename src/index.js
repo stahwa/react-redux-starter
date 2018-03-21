@@ -6,7 +6,7 @@ import rootReducer from 'containers/App/reducer';
 
 import { Router, hashHistory, useRouterHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
-import createHashHistory from 'react-router/node_modules/history/lib/createHashHistory';
+// import createHashHistory from 'react-router/node_modules/history/lib/createHashHistory';
 import routes from './routes';
 
 
@@ -22,7 +22,7 @@ const store = createStore(
 // const history = syncHistoryWithStore(hashHistory, store)
 
 // History with no key in url -----
-const history = syncHistoryWithStore(useRouterHistory(createHashHistory)({ queryKey: false }), store)
+// const history = syncHistoryWithStore(useRouterHistory(createHashHistory)({ queryKey: false }), store)
 
 render (
   <Provider store={store}>
