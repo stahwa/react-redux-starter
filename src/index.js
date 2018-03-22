@@ -1,32 +1,35 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import rootReducer from 'containers/App/reducer';
 
-import { Router, hashHistory, useRouterHistory } from 'react-router';
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
-// import createHashHistory from 'react-router/node_modules/history/lib/createHashHistory';
-import routes from './routes';
+import App from 'containers/App';
+import Main from 'containers/Main';
+import Home from 'containers/pages/Home';
+import About from 'containers/pages/About';
+
+import { Router, Route, browserHistory } from 'react-router-dom';
+import { syncHistoryWithStore, routerReducer, ConnectedRouter, routerMiddleware } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory'
 
 
+const history = createHistory()
+const middleware = routerMiddleware(history)
 
 const store = createStore(
   combineReducers({
     rootReducer,
     routing: routerReducer
-  })
+  }),
+  // applyMiddleware(middleware)
 )
-
-// History with key in url e.g.: ?_k=umhx1s -----
-// const history = syncHistoryWithStore(hashHistory, store)
-
-// History with no key in url -----
-// const history = syncHistoryWithStore(useRouterHistory(createHashHistory)({ queryKey: false }), store)
 
 render (
   <Provider store={store}>
-    <Router history={history} routes={routes} />
+    <Router history={history}>
+      <Route path="/" component={App} />
+    </Router>
   </Provider>,
   document.getElementById('root')
 )
