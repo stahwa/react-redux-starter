@@ -6,8 +6,8 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   filename: 'index.html',
   inject: 'body'
 });
-// var ExtractTextPlugin = require("extract-text-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 module.exports = {
@@ -33,10 +33,10 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          // MiniCssExtractPlugin.loader,
-          "style-loader",
-          "css-loader",
-          "sass-loader"
+          'style-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader'
         ]
       },
       {
@@ -56,7 +56,9 @@ module.exports = {
   },
   plugins: [
     HTMLWebpackPluginConfig,
-    new MiniCssExtractPlugin("main.css"),
+    new MiniCssExtractPlugin({
+      filename: 'styles.css'
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('development')
