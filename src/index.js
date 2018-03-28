@@ -2,34 +2,30 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Route } from 'react-router-dom';
+import { routerReducer, ConnectedRouter, routerMiddleware } from 'react-router-redux';
+import { createBrowserHistory } from 'history';
+
 import rootReducer from 'containers/App/reducer';
-
 import App from 'containers/App';
-import Main from 'containers/Main';
-import Home from 'containers/pages/Home';
-import About from 'containers/pages/About';
-
-import { Router, Route, browserHistory } from 'react-router-dom';
-import { syncHistoryWithStore, routerReducer, ConnectedRouter, routerMiddleware } from 'react-router-redux';
-import createHistory from 'history/createBrowserHistory'
 
 
-const history = createHistory()
+const history = createBrowserHistory()
 const middleware = routerMiddleware(history)
 
 const store = createStore(
   combineReducers({
-    rootReducer,
+    rootReducer, // TODO: fix no spread
     routing: routerReducer
   }),
-  // applyMiddleware(middleware)
+  applyMiddleware(middleware)
 )
 
-render (
+render(
   <Provider store={store}>
-    <Router history={history}>
+    <ConnectedRouter history={history}>
       <Route path="/" component={App} />
-    </Router>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
 )

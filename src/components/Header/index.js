@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles';
  
-
 class Header extends Component {
 
   render() {
@@ -16,6 +15,5 @@ class Header extends Component {
     )
   }
 }
-
 
 export default Header
