@@ -6,7 +6,7 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   filename: 'index.html',
   inject: 'body'
 });
-// var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
@@ -42,11 +42,7 @@ module.exports = {
       {
         test: /\.js$/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['es2015', 'react'],
-            plugins: ['transform-object-rest-spread']
-          }
+          loader: 'babel-loader'
         },
         exclude: /node_modules/
         
