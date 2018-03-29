@@ -24,10 +24,6 @@ module.exports = {
     },
     extensions: ['.js', '.scss']
   },
-  // resolve: {
-  //   root: path.resolve('./src'),
-  //   extensions: ['.js', '.scss']
-  // },
   module: {
     rules: [
       {
