@@ -17,6 +17,7 @@ class HomePage extends Component {
   }
 
   render() {
+    console.log(process.env.NODE_ENV)
     return (
       <div className="home-container page-container">
         <div className="home-comp">

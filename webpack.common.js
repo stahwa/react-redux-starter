@@ -1,18 +1,15 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/src/index.html',
   filename: 'index.html',
   inject: 'body'
 });
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'development',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -41,20 +38,13 @@ module.exports = {
           loader: 'babel-loader'
         },
         exclude: /node_modules/
-        
       }
-
     ]
-  },
+  },
   plugins: [
     HTMLWebpackPluginConfig,
     new MiniCssExtractPlugin({
       filename: 'styles.css'
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('development')
-      }
     })
   ]
 };
