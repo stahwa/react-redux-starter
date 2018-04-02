@@ -30,6 +30,7 @@ class HomePage extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log('mstp home state', state)
   return {
     text: state.rootReducer.textField.text
   }

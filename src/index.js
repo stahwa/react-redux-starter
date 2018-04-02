@@ -7,6 +7,7 @@ import { routerReducer, ConnectedRouter, routerMiddleware } from 'react-router-r
 import { createBrowserHistory } from 'history';
 
 import rootReducer from 'containers/App/reducer';
+import textField from 'containers/pages/Home/reducer';
 import App from 'containers/App';
 
 

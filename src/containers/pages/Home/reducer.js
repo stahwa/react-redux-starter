@@ -1,8 +1,13 @@
+import { UPDATE_TEXT } from 'constants/actionTypes';
 
-function textField(state = {text:''}, action) {
+const initialState = {
+  text: ''
+}
+
+function textField(state = initialState, action) {
   switch (action.type) {
-    case 'UPDATE_TEXT':
-      return Object.assign({}, {
+    case UPDATE_TEXT:
+      return Object.assign({}, state, {
         text: action.text
       })
     default:
@@ -10,7 +15,4 @@ function textField(state = {text:''}, action) {
   }
 }
 
-
 export default textField
-
-
