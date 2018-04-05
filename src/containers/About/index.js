@@ -9,7 +9,7 @@ class AboutPage extends Component {
       <div className="about-container page-container">
         <div className="about-comp">
           <h1>About</h1>
-          <p>This starter uses: React, Redux, React Router, ES6, Webpack and SASS.</p>
+          <p>Just a minimal React starter.</p>
         </div>
       </div>
     )

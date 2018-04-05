@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
 import styles from './styles';
 
 
 const TextField = (props) => {
+
   return (
     <div className="text-field-comp">
       <p>Text field for state example</p>

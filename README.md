@@ -9,13 +9,9 @@
 ## Build it
 * Clone this repo.
 * Run `npm install` in the root directory.
-* Run `webpack --watch` to build and watch.
-* Run `webpack -d` for development.
-* Run `webpack -p` for production.
+* Run `npm start` to build and watch for development.
+* Run `npm run build` for production.
 
 
 ## Launch
-* Just launch from the dist folder.
-
-
-
+* Go to localhost:8080

@@ -1,4 +1,4 @@
-import { UPDATE_TEXT } from 'constants/actionTypes';
+import { UPDATE_TEXT } from 'config/actionTypes';
 
 
 export const addToString = (text) => {
