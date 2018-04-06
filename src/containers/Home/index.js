@@ -23,7 +23,10 @@ class HomePage extends Component {
         <div className="home-comp">
           <h1>A React Redux Starter</h1>
         </div>
-        <TextField onUpdate={this.handleOnUpdate} text={this.props.text} />
+        <TextField onUpdate={this.handleOnUpdate}
+          placeholder="Enter some text"
+          text={this.props.text}
+        />
       </div>
     )
   }
@@ -32,7 +35,7 @@ class HomePage extends Component {
 const mapStateToProps = (state) => {
   console.log('mstp home state', state)
   return {
-    text: state.rootReducer.textField.text
+    text: state.homeExample.textField
   }
 }
 

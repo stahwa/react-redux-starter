@@ -6,17 +6,15 @@ import { Route } from 'react-router-dom';
 import { routerReducer, ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import { createBrowserHistory } from 'history';
 
-import rootReducer from 'containers/App/reducer';
-import textField from 'containers/Home/reducer';
+import homeExample from 'containers/Home/reducer';
 import App from 'containers/App';
-
 
 const history = createBrowserHistory()
 const middleware = routerMiddleware(history)
 
 const store = createStore(
   combineReducers({
-    rootReducer, // TODO: fix no spread
+    homeExample,
     routing: routerReducer
   }),
   applyMiddleware(middleware)
@@ -28,5 +26,5 @@ render(
       <Route path="/" component={App} />
     </ConnectedRouter>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('app')
 )

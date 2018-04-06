@@ -5,7 +5,6 @@ import Header from 'components/Header';
 import Home from 'containers/Home';
 import About from 'containers/About';
 
-
 class App extends Component {
   
   render() {
@@ -20,6 +19,5 @@ class App extends Component {
     )
   }
 }
-
 
 export default App

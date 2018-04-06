@@ -1,18 +1,18 @@
 import { UPDATE_TEXT } from 'config/actionTypes';
 
 const initialState = {
-  text: ''
+  textField: ''
 }
 
-function textField(state = initialState, action) {
+function homeExample(state = initialState, action) {
   switch (action.type) {
     case UPDATE_TEXT:
       return Object.assign({}, state, {
-        text: action.text
+        textField: action.text
       })
     default:
       return state
   }
 }
 
-export default textField
+export default homeExample
