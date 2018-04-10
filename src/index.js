@@ -9,8 +9,8 @@ import { createBrowserHistory } from 'history';
 import homeExample from 'containers/Home/reducer';
 import App from 'containers/App';
 
-const history = createBrowserHistory()
-const middleware = routerMiddleware(history)
+const history = createBrowserHistory();
+const middleware = routerMiddleware(history);
 
 const store = createStore(
   combineReducers({
@@ -18,7 +18,7 @@ const store = createStore(
     routing: routerReducer
   }),
   applyMiddleware(middleware)
-)
+);
 
 render(
   <Provider store={store}>
@@ -27,4 +27,4 @@ render(
     </ConnectedRouter>
   </Provider>,
   document.getElementById('app')
-)
+);

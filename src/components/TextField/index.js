@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './styles';
 
-const { string } = PropTypes;
+const { string, func } = PropTypes;
 
 /**
  * Reusable TextField
@@ -12,26 +12,26 @@ const { string } = PropTypes;
  * @return {ReactElement}
  */
 const TextField = (props) => {
-
-  const { placeholder, text } = props;
+  const { placeholder, text, onUpdate } = props;
 
   return (
     <div className="text-field-comp">
       <p>Text field for state example</p>
       <input
         type="text"
-        onChange={props.onUpdate} 
-        value={props.text}
-        placeholder={ placeholder }
+        onChange={onUpdate}
+        value={text}
+        placeholder={placeholder}
       />
-      <p>{props.text}</p>
+      <p>{text}</p>
     </div>
-  )
-}
-
-TextField.propTypes = {
-  placeholder : string,
-	text : string
+  );
 };
 
-export default TextField
+TextField.propTypes = {
+  placeholder: string,
+  text: string,
+  onUpdate: func
+};
+
+export default TextField;
