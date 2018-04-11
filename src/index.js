@@ -6,8 +6,8 @@ import { Route } from 'react-router-dom';
 import { routerReducer, ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import { createBrowserHistory } from 'history';
 
-import homeExample from 'containers/Home/reducer';
-import App from 'containers/App';
+import homeExample from './containers/Home/reducer';
+import App from './containers/App';
 
 const history = createBrowserHistory();
 const middleware = routerMiddleware(history);

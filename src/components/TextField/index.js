@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, func } from 'prop-types';
 import styles from './styles';
 
-const { string, func } = PropTypes;
+// const { string, func } = PropTypes;
 
 /**
  * Reusable TextField

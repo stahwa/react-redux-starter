@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import styles from './styles';
 import { connect } from 'react-redux';
-import { addToString } from './actions';
 import TextField from 'components/TextField';
+import { addToString } from './actions';
+import styles from './styles';
 
 
 class HomePage extends Component {
-
   constructor(props) {
-    super(props)
-    this.handleOnUpdate = this.handleOnUpdate.bind(this)
+    super(props);
+    this.handleOnUpdate = this.handleOnUpdate.bind(this);
   }
 
   handleOnUpdate(e) {
@@ -17,30 +16,31 @@ class HomePage extends Component {
   }
 
   render() {
-    console.log(process.env.NODE_ENV)
+    console.log(process.env.NODE_ENV);
     return (
       <div className="home-container page-container">
         <div className="home-comp">
           <h1>A React Redux Starter</h1>
         </div>
-        <TextField onUpdate={this.handleOnUpdate}
+        <TextField
+          onUpdate={this.handleOnUpdate}
           placeholder="Enter some text"
           text={this.props.text}
         />
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log('mstp home state', state)
+  console.log('mstp home state', state);
   return {
     text: state.homeExample.textField
-  }
-}
+  };
+};
 
 
 export default connect(
   mapStateToProps,
   { addToString }
-)(HomePage)
+)(HomePage);

@@ -16,11 +16,10 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    alias: {
-      components: path.resolve(__dirname, 'src/components'),
-      containers: path.resolve(__dirname, 'src/containers'),
-      config: path.resolve(__dirname, 'src/config')
-    },
+    modules: [
+      path.resolve(__dirname, 'src'),
+      'node_modules'
+    ],
     extensions: ['.js', '.scss']
   },
   module: {
