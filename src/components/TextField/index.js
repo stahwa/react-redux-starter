@@ -1,6 +1,6 @@
 import React from 'react';
 import { string, func } from 'prop-types';
-import styles from './styles';
+import './styles';
 
 // const { string, func } = PropTypes;
 

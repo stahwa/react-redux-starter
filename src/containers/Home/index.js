@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { string, func } from 'prop-types';
 import TextField from 'components/TextField';
 import { addToString } from './actions';
-import styles from './styles';
+import './styles';
 
 
 class HomePage extends Component {
@@ -16,7 +17,6 @@ class HomePage extends Component {
   }
 
   render() {
-    console.log(process.env.NODE_ENV);
     return (
       <div className="home-container page-container">
         <div className="home-comp">
@@ -32,13 +32,17 @@ class HomePage extends Component {
   }
 }
 
+HomePage.propTypes = {
+  addToString: func,
+  text: string
+};
+
 const mapStateToProps = (state) => {
   console.log('mstp home state', state);
   return {
     text: state.homeExample.textField
   };
 };
-
 
 export default connect(
   mapStateToProps,
