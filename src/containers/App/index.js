@@ -5,14 +5,16 @@ import Home from 'containers/Home';
 import About from 'containers/About';
 import './styles';
 
-const App = () => (
-  <div className="site-wrap">
-    <Header />
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-    </Switch>
-  </div>
-);
+const App = () => {
+  return (
+    <div className="site-wrap">
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+      </Switch>
+    </div>
+  );
+};
 
 export default App;

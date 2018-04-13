@@ -1,9 +1,10 @@
 import { UPDATE_TEXT } from 'config/actionTypes';
 
-
-export const addToString = (text) => {
+const addToString = (text) => {
   return {
     type: UPDATE_TEXT,
     text
   };
 };
+
+export default addToString;

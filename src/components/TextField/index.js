@@ -2,8 +2,6 @@ import React from 'react';
 import { string, func } from 'prop-types';
 import './styles';
 
-// const { string, func } = PropTypes;
-
 /**
  * Reusable TextField
  * @param {object} props
