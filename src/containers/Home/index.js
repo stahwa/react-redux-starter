@@ -25,6 +25,7 @@ class HomePage extends Component {
           onUpdate={this.handleOnUpdate}
           placeholder="Enter some text"
           text={this.props.text}
+          labelText="Text field for state example"
         />
       </div>
     );

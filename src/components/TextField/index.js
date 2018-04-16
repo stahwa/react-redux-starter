@@ -3,23 +3,39 @@ import { string, func } from 'prop-types';
 import './styles';
 
 /**
- * Reusable TextField
+ * Renders the label element
+ * @param {string} labelText - The label text
+ * @returns {ReactElement}
+ */
+function createLabel(labelText) {
+  return labelText ? <label htmlFor="inputField">{labelText}</label> : null;
+}
+
+/**
+ * TextField component
  * @param {object} props
- * @param {string} props.text - the text
- * @param {string} props.placeholder - placeholder text
+ * @param {string} props.text - The text
+ * @param {string} props.placeholder - Placeholder text
+ * @param {string} props.labelText - Text for the label
  * @return {ReactElement}
  */
 const TextField = (props) => {
-  const { placeholder, text, onUpdate } = props;
+  const {
+    placeholder,
+    text,
+    labelText,
+    onUpdate
+  } = props;
 
   return (
     <div className="text-field-comp">
-      <p>Text field for state example</p>
+      {createLabel(labelText)}
       <input
+        id="inputField"
         type="text"
-        onChange={onUpdate}
         value={text}
         placeholder={placeholder}
+        onChange={onUpdate}
       />
       <p>{text}</p>
     </div>
@@ -29,6 +45,7 @@ const TextField = (props) => {
 TextField.propTypes = {
   placeholder: string,
   text: string,
+  labelText: string,
   onUpdate: func
 };
 
