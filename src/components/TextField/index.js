@@ -5,7 +5,7 @@ import './styles';
 /**
  * Renders the label element
  * @param {string} labelText - The label text
- * @returns {ReactElement}
+ * @returns {ReactElement | null}
  */
 function createLabel(labelText) {
   return labelText ? <label htmlFor="inputField">{labelText}</label> : null;
@@ -37,7 +37,6 @@ const TextField = (props) => {
         placeholder={placeholder}
         onChange={onUpdate}
       />
-      <p>{text}</p>
     </div>
   );
 };

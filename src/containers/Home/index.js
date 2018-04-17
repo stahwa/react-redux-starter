@@ -16,6 +16,8 @@ class HomePage extends Component {
   }
 
   render() {
+    const { text } = this.props;
+
     return (
       <div className="home-container page-container">
         <div className="home-comp">
@@ -24,9 +26,10 @@ class HomePage extends Component {
         <TextField
           onUpdate={this.handleOnUpdate}
           placeholder="Enter some text"
-          text={this.props.text}
+          text={text}
           labelText="Text field for state example"
         />
+        <p>{text}</p>
       </div>
     );
   }
@@ -43,7 +46,15 @@ const mapStateToProps = (state) => {
   };
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToString: (text) => {
+      dispatch(addToString(text));
+    }
+  };
+};
+
 export default connect(
   mapStateToProps,
-  { addToString }
+  mapDispatchToProps
 )(HomePage);
