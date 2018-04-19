@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router-dom';
 import Header from 'components/Header';
 import Home from 'containers/Home';
 import About from 'containers/About';
-import './styles';
 
 const App = () => {
   return (
