@@ -5,6 +5,13 @@ import TextField from 'components/TextField';
 import addToString from './actions';
 import './styles';
 
+/**
+ * Home Page
+ * @param {object} props
+ * @param {string} props.text - The text
+ * @param {function} props.addToString - Function to add text
+ * @return {ReactElement}
+ */
 class HomePage extends Component {
   constructor(props) {
     super(props);

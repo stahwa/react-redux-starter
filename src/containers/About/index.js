@@ -1,6 +1,10 @@
 import React from 'react';
 import './styles';
 
+/**
+ * About page
+ * @return {ReactElement}
+ */
 const AboutPage = () => {
   return (
     <div className="about-container page-container">

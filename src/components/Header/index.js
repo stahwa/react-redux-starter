@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles';
 
+/**
+ * Header component
+ * @return {ReactElement}
+ */
 const Header = () => {
   return (
     <header>
