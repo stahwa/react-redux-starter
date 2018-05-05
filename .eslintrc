@@ -1,8 +1,9 @@
 {
   "extends": "airbnb",
-  "env" : {
-		"browser" : true,
-		"es6" : true
+  "env": {
+		"browser": true,
+    "es6": true,
+    "jest": true
 	},
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
@@ -10,7 +11,7 @@
     "react/require-default-props": [0],
     "comma-dangle": ["error", "never"],
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
-    "arrow-body-style" : ["error", "always"],
+    "arrow-body-style": ["error", "always"],
     "jsx-a11y/anchor-is-valid": ["error", {
       "components": ["Link"],
       "specialLink": ["to"]
