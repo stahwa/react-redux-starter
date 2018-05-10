@@ -6,21 +6,30 @@ import TextField from './index';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('<TextField />', () => {
-  const props = {
-    labelText: 'A label'
-  };
-
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<TextField {...props} />);
+    wrapper = shallow(<TextField />);
   });
 
   it('should have class "text-field-comp"', () => {
     expect(wrapper.is('.text-field-comp')).toBe(true);
   });
 
-  it('should have a label with labelText text', () => {
-    expect(wrapper.find('label').text()).toBe(props.labelText);
+  describe('with labelText props', () => {
+    const labelProps = {
+      labelText: 'A label'
+    };
+
+    it('should have a label with labelText text', () => {
+      wrapper.setProps(labelProps);
+      expect(wrapper.find('label').text()).toBe(labelProps.labelText);
+    });
+  });
+
+  describe('without labelText props', () => {
+    it('should not have a label', () => {
+      expect(wrapper.find('label')).toHaveLength(0);
+    });
   });
 });
