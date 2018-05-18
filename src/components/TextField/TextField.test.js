@@ -16,6 +16,20 @@ describe('<TextField />', () => {
     expect(wrapper.is('.text-field-comp')).toBe(true);
   });
 
+  it('should call onUpdate prop with onChange value', () => {
+    const onUpdateMock = jest.fn();
+    const event = {
+      target: { value: 'hello' }
+    };
+
+    wrapper.setProps({
+      onUpdate: onUpdateMock
+    });
+
+    wrapper.find('input').simulate('change', event);
+    expect(onUpdateMock).toBeCalledWith(event);
+  });
+
   describe('with labelText props', () => {
     const labelProps = {
       labelText: 'A label'
