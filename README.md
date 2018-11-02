@@ -3,7 +3,7 @@
 
 
 ## Info
-* This project uses: React, Redux, React Router, ES6, Webpack and SASS.
+* This project uses: React, Redux, React Router, Jest, Webpack and SASS.
     
 
 ## Build it
@@ -12,7 +12,7 @@
 * Run `npm start` to build and watch for development.
 * Run `npm run build` for production.
 * Run `npm test` to run tests and create a "coverage" directory.
-* Run `npm run jsdoc` to generate an "out" directory with documentation.
+* Run `npm run jsdoc` to create an "out" directory with documentation.
 
 
 ## Launch
