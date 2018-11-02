@@ -11,6 +11,8 @@
 * Run `npm install` in the root directory.
 * Run `npm start` to build and watch for development.
 * Run `npm run build` for production.
+* Run `npm test` to run tests and create a "coverage" directory.
+* Run `npm run jsdoc` to generate an "out" directory with documentation.
 
 
 ## Launch

@@ -11,11 +11,6 @@
   },
   "author": "Stanley Hwang",
   "license": "ISC",
-  "jest": {
-    "moduleNameMapper": {
-      "./styles": "<rootDir>/__mocks__/styleMock.js"
-    }
-  },
   "dependencies": {
     "history": "^4.7.2",
     "prop-types": "^15.6.1",
