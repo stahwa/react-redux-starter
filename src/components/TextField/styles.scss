@@ -1,4 +1,3 @@
-
 /* ===== TEXT FIELD ============= */
 
 .text-field-comp {
@@ -12,6 +11,8 @@
     padding: 5px 10px;
     width: 200px;
     appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     box-shadow: none;
     border: none;
   }

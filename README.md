@@ -3,19 +3,17 @@
 
 
 ## Info
-* This project uses: React, Redux, React Router, ES6, Webpack and SASS.
+* This project uses: React, Redux, React Router, Jest, Webpack and SASS.
     
 
 ## Build it
 * Clone this repo.
 * Run `npm install` in the root directory.
-* Run `webpack --watch` to build and watch.
-* Run `webpack -d` for development.
-* Run `webpack -p` for production.
+* Run `npm start` to build and watch for development.
+* Run `npm run build` for production.
+* Run `npm test` to run tests and create a "coverage" directory.
+* Run `npm run jsdoc` to create an "out" directory with documentation.
 
 
 ## Launch
-* Just launch from the dist folder.
-
-
-
+* Go to localhost:8080

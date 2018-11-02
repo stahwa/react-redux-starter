@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
-import styles from './styles';
- 
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './styles';
 
-class Header extends Component {
+/**
+ * Header component
+ * @return {ReactElement}
+ */
+const Header = () => {
+  return (
+    <header>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+      </ul>
+    </header>
+  );
+};
 
-  render() {
-    return (
-      <header>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-        </ul>
-      </header>
-    )
-  }
-}
-
-
-export default Header
+export default Header;

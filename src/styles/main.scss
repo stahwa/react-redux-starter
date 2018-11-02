@@ -1,6 +1,5 @@
-@import '../../styles/reset';
-@import '../../styles/mixVar';
-
+@import 'styles/reset';
+@import 'styles/variables';
 
 /* ===== GENERAL ============= */
 
@@ -16,21 +15,14 @@ h1 {
   font-weight: 500;
 }
 
-
 /* ===== PAGES ============= */
 
 .page-container {
   font-size: 18px;
   color: #fff;
   padding-top: 20px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
   width: 100%;
-  transform: translateX(0);
   h1 {
     margin-bottom: 40px;
   }
 }
-
-
