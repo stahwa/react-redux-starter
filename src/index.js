@@ -7,7 +7,7 @@ import { routerReducer, ConnectedRouter, routerMiddleware } from 'react-router-r
 import { createBrowserHistory } from 'history';
 
 import 'styles/main';
-import homeExample from 'containers/Home/reducer';
+import textReducer from 'reducers/textReducer';
 import App from 'containers/App';
 
 const history = createBrowserHistory();
@@ -15,7 +15,7 @@ const middleware = routerMiddleware(history);
 
 const store = createStore(
   combineReducers({
-    homeExample,
+    textReducer,
     routing: routerReducer
   }),
   applyMiddleware(middleware)

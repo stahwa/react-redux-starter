@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { string, func } from 'prop-types';
 import TextField from 'components/TextField';
-import addToString from './actions';
+import addToString from 'actions/textActions';
 import './Home.scss';
 
 /**
@@ -49,7 +49,7 @@ HomePage.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    text: state.homeExample.textField
+    text: state.textReducer.textField
   };
 };
 

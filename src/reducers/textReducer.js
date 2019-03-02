@@ -4,7 +4,7 @@ const initialState = {
   textField: ''
 };
 
-function homeExample(state = initialState, action) {
+function textReducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_TEXT:
       return Object.assign({}, state, {
@@ -15,4 +15,4 @@ function homeExample(state = initialState, action) {
   }
 }
 
-export default homeExample;
+export default textReducer;
