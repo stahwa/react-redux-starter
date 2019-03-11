@@ -20,7 +20,6 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          // 'style-loader', // TODO: maybe don't need
           MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'

@@ -1,19 +1,18 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Header from 'components/Header';
-import Home from 'containers/Home';
-import About from 'containers/About';
+import PropTypes from 'prop-types';
+import { ConnectedRouter } from 'connected-react-router';
+import routes from 'routes';
 
-const App = () => {
+const App = ({ history }) => {
   return (
-    <div className="site-wrap">
-      <Header />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-      </Switch>
-    </div>
+    <ConnectedRouter history={history}>
+      { routes }
+    </ConnectedRouter>
   );
+};
+
+App.propTypes = {
+  history: PropTypes.object
 };
 
 export default App;

@@ -49,7 +49,7 @@ HomePage.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    text: state.textReducer.textField
+    text: state.text.textField
   };
 };
 
