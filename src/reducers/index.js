@@ -1,10 +1,6 @@
-import { combineReducers } from 'redux'
-import { connectRouter } from 'connected-react-router'
-import textReducer from './textReducer'
+import { combineReducers } from 'redux';
+import textReducer from './textReducer';
 
-const rootReducer = (history) => combineReducers({
-  text: textReducer,
-  router: connectRouter(history)
-})
-
-export default rootReducer
+export default combineReducers({
+  textReducer
+});

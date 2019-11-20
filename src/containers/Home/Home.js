@@ -19,7 +19,8 @@ class HomePage extends Component {
   }
 
   handleOnUpdate(e) {
-    this.props.addToString(e.target.value, true);
+    const { appendText } = this.props;
+    appendText(e.target.value, true);
   }
 
   render() {
@@ -43,19 +44,19 @@ class HomePage extends Component {
 }
 
 HomePage.propTypes = {
-  addToString: func,
+  appendText: func,
   text: string
 };
 
 const mapStateToProps = (state) => {
   return {
-    text: state.text.textField
+    text: state.textReducer.textField
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToString: (text) => {
+    appendText: (text) => {
       dispatch(addToString(text));
     }
   };

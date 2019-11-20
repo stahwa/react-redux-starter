@@ -24,9 +24,10 @@
   },
   "settings": {
     "import/resolver": {
+      "node": {},
       "webpack": {
-        "config": "webpack.common.js"
-      }
+        "config": "webpack.common.js",
+      },
     }
   }
 }

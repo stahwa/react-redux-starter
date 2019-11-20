@@ -7,9 +7,7 @@ const initialState = {
 function textReducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_TEXT:
-      return Object.assign({}, state, {
-        textField: action.text
-      });
+      return { ...state, textField: action.text };
     default:
       return state;
   }

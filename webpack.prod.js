@@ -11,7 +11,7 @@ module.exports = merge.smart(common, {
           {
             loader: 'css-loader',
             options: {
-              minimize: true
+              // minimize: true
             }
           }
         ]
